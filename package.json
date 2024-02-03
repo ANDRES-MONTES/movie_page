@@ -1,0 +1,11 @@
+{
+  "name": "movie_page",
+  "version": "1.0.0",
+  "description": "a movie page connected to a API, the view inspired by movie platforms",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andresmontes730@gmail.com",
+  "license": "MIT"
+}
