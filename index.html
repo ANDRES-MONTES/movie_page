@@ -7,8 +7,128 @@
     <title>MONMOvies</title>
 </head>
 <body>
-    <h1>my movies</h1>
-    <script src="./src/secret.js"></script>
+    <div class="container-nav">
+        <nav>
+            <div class="nav_section_pricipal">
+                <h1 class="main_nav_title"><a href="">montes video</a></h1>
+                <div>
+                    <ul class="info-navbar">
+                        <li class="nav_item hover-info"><a id="inicio_seccion" href="">Inicio</a>
+                            <ul class="dropdown-content-1">
+                                <li><a href="">Todo</a></li>
+                                <li><a href="">Peliculas</a></li>
+                                <li><a href="">Series</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav_item hover-info"><a href="">Tienda</a>
+                            <ul class="dropdown-content-2">
+                                <li><a href="">Todo</a></li>
+                                <li><a href="">Alquilar o comprar</a></li>
+                                <li><a href="">Canales</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav_item hover-info"><a id="category_section" href="">Categorias</a>
+                            <ul class="dropdown-content-3">
+                                <!-- <li><a href="">Accion y Aventura</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav_item hover-info" ><a href="">Mi espacio</a>
+                            <ul class="dropdown-content-4">
+                                <li><a href="">Todo</a></li>
+                                <li><a href="">Mi lista</a></li>
+                                <li><a href="">Titulos comprados</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-part">
+                    <button type="button" onclick="toggleBusqueda()" class="buscador-img">
+                        <img src="./styles/lupa.svg" alt="">
+                    </button>
+                    <a class="imagen-perfil" href=""><img src="./styles/foto_perfil.png" alt=""></a>
+                </div>
+            </div>
+            <div class="barra-busqueda" style="display:none;">
+                <input class="input-info" type="text" placeholder="Buscar...">
+                <button type="button" class="busqueda_pelicula">Buscar</button>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="seguir_viendo">
+            <h2 class="title_seguir_viendo">Seguir viendo</h2>
+            <div class="scroll_container">
+                <div class="movie_container">
+                    <!-- <div class="card_of_the_movie">
+                        <img src="./styles/kenchi_hermosa.jpg" alt="">
+                    </div> -->
+                </div>
+                <button class="scroll_derecha scroll">
+                    <img src="./styles/flecha.png" alt="">
+                </button>
+                <button class="scroll_izquierda scroll">
+                    <img src="./styles/flecha.png" alt="">
+                </button>
+            </div>
+        <div>
+        <div class="popular">
+            <h2>Popular</h2>
+            <div class="scroll_container_popular">
+                <div class="movie_popular_container">
+                    <!-- <div class="all_card_info">
+                        <div class="card_of_the_movie_pupular">
+                            <img src="./styles/kenchi_hermosa.jpg" alt="">
+                        </div>
+                        <div class="container_info_movie">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque facilis, ut quaerat neque eveniet suscipit culpa eligendi ducimus pariatur omnis!</p>
+                        </div>
+                    </div> -->
+                </div>
+                <button class="scroll_derecha_popular scroll">
+                    <img src="./styles/flecha.png" alt="">
+                </button>
+                <button class="scroll_izquierda_popular scroll">
+                    <img src="./styles/flecha.png" alt="">
+                </button>
+            </div>
+        </div>
+        <div>
+            <div class="categoty_main_coontainer">
+                <h1 class="title_categories">Categorias</h1>
+                <h2>Generos</h2>
+                <div class="container_generos">
+                    <!-- <div class="card_genros">
+                         <a href=""><p>accion aventura</p> </a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="genro_de_categoria">
+                <h2 class="titulo_generos"></h2>
+                <div class="genero_container">
+                    <!-- <div class="card_genero_cotainer">
+                        <img src="./styles/kenchi_hermosa.jpg" alt="">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="search_section">
+            <div class="genero_container_search">
+                <!-- <div class="card_genero_cotainer">
+                    <img src="./styles/kenchi_hermosa.jpg" alt="">
+                </div> -->
+            </div>
+        </div>
+        <div class="movie_details_section">
+            <div class="card_movie_details">
+            </div>
+            <h3 class="titulo_recomendadas">Peliculas similares</h3>
+            <div class="pelis_recomendadas">
+            </div>
+        </div>
+    </main>
+
+    
     <script src="./src/main.js"></script>
+    <script src="./src/navigation.js"></script>
 </body>
 </html>
