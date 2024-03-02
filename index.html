@@ -7,6 +7,7 @@
     <title>MONMOvies</title>
 </head>
 <body>
+    <div class="loader"></div>
     <div class="container-nav">
         <nav>
             <div class="nav_section_pricipal">
@@ -54,7 +55,7 @@
             </div>
         </nav>
     </div>
-    <main>
+    <main class="main_container"  style="display:none;">
         <div class="seguir_viendo">
             <h2 class="title_seguir_viendo">Seguir viendo</h2>
             <div class="scroll_container">
@@ -91,6 +92,24 @@
                     <img src="./styles/flecha.png" alt="">
                 </button>
             </div>
+        </div>
+        <div class="liked_container">
+            <h2>Peliculas favoritas</h2>
+            <div class="liked_section_container">
+                <div class="movies_liked_conainer">        
+                    <!-- <div class="card_of_the_movie">
+                        <img src="./styles/kenchi_hermosa.jpg" alt="">
+                        <button class="button_favorite" onclick="save_favorites()"></button>
+                    </div> -->
+                </div>
+                <button class="scroll_derecha_liked scroll">
+                    <img src="./styles/flecha.png" alt="">
+                </button>
+                <button class="scroll_izquierda_liked scroll">
+                    <img src="./styles/flecha.png" alt="">
+                </button>
+            </div>
+
         </div>
         <div>
             <div class="categoty_main_coontainer">

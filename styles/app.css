@@ -16,6 +16,7 @@ body {
     background-color: var(--color-body);
     padding-bottom: 40px;
     margin-bottom: 160px;
+    
 }
 
 .container-nav{
@@ -56,6 +57,32 @@ nav{
     transition: top 0.3s;
     text-align: center;
     padding: 15px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    display: block;
+    z-index: 2;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.main_container{
+    display: none;
 }
 
 h1{
@@ -273,6 +300,10 @@ h1{
     width: 266px;
     height: 303px;
     border-radius: 25px;
+    display: flex;
+    column-gap: 40px;
+    transition: transform 1s ease;
+    position: relative;
 }
 
 .card_of_the_movie img {
@@ -281,13 +312,39 @@ h1{
     border-radius: 20px;
 }
 
-.movie_container {
+.button_favorite{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border-radius: 30px;
+    background-color: #00050d;
+    text-align: center;
+    border: none;
+    box-shadow: 4px 3px 20px 2px black;
+}
+
+
+.button_favorite::before {
+    content: '🤍';
+}
+
+.movie_btn_liked::before {
+    content: '';
+    
+}
+
+
+.movie_container, .movies_liked_conainer{
     display: flex;
     column-gap: 30px;
     transition: transform 1s ease;
 }
 
-.scroll_container {
+.scroll_container, .liked_section_container {
     width: 95%;
     height: auto;
     overflow: hidden;
@@ -321,21 +378,21 @@ h1{
 }
 
 
-.scroll_izquierda {
+.scroll_izquierda, .scroll_izquierda_liked {
     left: 0px;
 }
 
-.scroll_derecha {
+.scroll_derecha, .scroll_derecha_liked {
     right: 0px;
 }
 
-.scroll_derecha img {
+.scroll_derecha img, .scroll_derecha_liked img {
     width: 100%;
     height: 60%;
     object-fit: contain;
 }
 
-.scroll_izquierda img {
+.scroll_izquierda img, .scroll_izquierda_liked img {
     width: 100%;
     height: 60%;
     transform: rotate(180deg);
@@ -355,7 +412,7 @@ h2 {
 
 /* LA SECCION DE POPULAR */
 
-.popular{
+.popular, .liked_container{
     margin-top: 50px;
     margin-bottom: 60px;
     width: 100%;
@@ -363,7 +420,8 @@ h2 {
     height: auto;
 }
 
-.scroll_container_popular {
+
+.scroll_container_popular{
     width: 95%;
     height: auto;
     overflow: hidden;
@@ -372,11 +430,15 @@ h2 {
 }
 
 
-.movie_popular_container {
+
+
+.movie_popular_container{
     display: flex;
     column-gap: 40px;
     transition: transform 1s ease;
 }
+
+
 
 .all_card_info{
     width: 266px;
@@ -411,6 +473,7 @@ h2 {
     width: 266px;
     height: auto;
     border-radius: 25px;
+    position: relative;
 }
 
 
@@ -525,6 +588,7 @@ h2 {
     width: 266px;
     height: 303px;
     border-radius: 25px;
+    position: relative;
 }
 
 
@@ -635,3 +699,4 @@ h2 {
     padding-left: 20px;
     border-bottom: 1px solid white;
 }
+

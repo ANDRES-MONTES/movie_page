@@ -10,6 +10,7 @@ let busqueda_movie = document.querySelector('.busqueda_pelicula')
 let input_movie = document.querySelector('.input-info')
 let buscar_seccion = document.querySelector('.search_section')
 let seccion_details_movie = document.querySelector('.movie_details_section')
+let liked_section = document.querySelector('.liked_container')
 
 categorias_ancla.addEventListener('click', () => {
     event.preventDefault()
@@ -28,11 +29,6 @@ window.addEventListener('load', navigator)
 busqueda_movie.addEventListener('click', () => {
     location.hash = `#search=${input_movie.value}`
 })
-
-
-
-
-
 
 
 function navigator() {
@@ -58,16 +54,25 @@ function home_page(){
     get_trending_movies()
     get_genres_movies()
     get_pupular_movies() 
+    draw_loked_movies()
     movie_categories.style.display = 'none'
     genero_categoria.style.display = 'none'
     buscar_seccion.style.display = 'none'
     scroll_container.style.display = 'block'
     title_seguit_viendo.style.display = 'block'
     popular.style.display = 'block'
+    liked_section.style.display = 'block'
     seccion_details_movie.style.display = 'none'
 }
 
 function category_page(){
+    setTimeout(function() {
+        loader.style.display = 'block'
+    }, 0)
+    setTimeout(function() {
+        loader.style.display = 'none'
+    }, 500)
+
     window.scrollTo({
         top: 0,
         behavior: 'smooth' // Esto hace que el desplazamiento sea suave (opcional)
@@ -79,6 +84,8 @@ function category_page(){
     title_seguit_viendo.style.display = 'none'
     buscar_seccion.style.display = 'none'
     seccion_details_movie.style.display = 'none'
+    liked_section.style.display = 'none'
+
     console.log('CATEGORYY!!!!')
 
     let position = location.hash
@@ -91,6 +98,13 @@ function category_page(){
     
     if(number) {
         get_movies_by_category(number, genero)
+        
+        window.addEventListener('scroll', function() {
+            const view = document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 15
+            if (view) {
+                get_paginated_by_category(number)
+            }
+        })
     }
 
 }
@@ -107,6 +121,7 @@ function movie_page(){
     scroll_container.style.display = 'none'
     title_seguit_viendo.style.display = 'none'
     buscar_seccion.style.display = 'none'
+    liked_section.style.display = 'none'
     seccion_details_movie.style.display = 'block'
 
     let position = location.hash
@@ -128,6 +143,8 @@ function search_page(){
     scroll_container.style.display = 'none'
     title_seguit_viendo.style.display = 'none'
     seccion_details_movie.style.display = 'none'
+    liked_section.style.display = 'none'
+
 
 
     let palabra_A_buscar = input_movie.value
@@ -135,6 +152,13 @@ function search_page(){
 
     buscar_seccion.style.display = 'block'
     toggleBusqueda()
+
+    window.addEventListener('scroll', function() {
+        const view = document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 15
+        if (view) {
+            get_movies_paginated_by_search(palabra_A_buscar)
+        }
+    })
 
     console.log('searh!!!!')
 }
